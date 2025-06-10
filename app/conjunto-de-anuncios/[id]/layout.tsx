@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { X, Search, Edit, Eye, ChevronRight, Grid3X3, FileText, MoreHorizontal } from "lucide-react"
 import { Suspense } from "react"
-import { useAdvertisingData } from "../../../lib/hooks/use-advertising-data"
+import { useAdvertisingData } from "../../../lib/ad-sets/hooks"
 import { getStatusColor, getStatusText } from "../../utils/advertising-helpers"
 
 interface AdSetLayoutProps {

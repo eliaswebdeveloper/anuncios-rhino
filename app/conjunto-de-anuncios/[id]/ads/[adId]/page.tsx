@@ -1,7 +1,7 @@
 "use client"
 
 import { useParams } from "next/navigation"
-import { useAdvertisingData } from "../../../../../lib/hooks/use-advertising-data"
+import { useAdvertisingData } from "../../../../../lib/ad-sets/hooks"
 import { IndividualAdSettings } from "../../../../../components/ad-sets/individual-ad-settings"
 
 export default function IndividualAdPage() {

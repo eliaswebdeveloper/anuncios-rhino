@@ -9,7 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { CheckCircle, Upload, Eye, Info } from "lucide-react"
 import type { Ad } from "../../types/advertising"
-import { useAdvertisingData } from "../../lib/hooks/use-advertising-data"
+import { useAdvertisingData } from "../../lib/ad-sets/hooks"
 import { validateAdData, getStatusColor, getStatusText } from "../../app/utils/advertising-helpers"
 
 interface IndividualAdSettingsProps {

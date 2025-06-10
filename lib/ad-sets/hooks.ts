@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from "react"
 import type { Campaign, AdSet, Ad, AdAccount } from "../../types/advertising"
-import { mockAdAccount, mockCampaigns, mockAdSets, mockAds } from "../../data/data/mock-data"
+import { mockAdAccount, mockCampaigns, mockAdSets, mockAds } from "../mock-data"
 
 export function useAdvertisingData() {
   const [account] = useState<AdAccount>(mockAdAccount)

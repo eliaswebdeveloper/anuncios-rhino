@@ -19,7 +19,7 @@ export const mockAdAccount: AdAccount = {
 export const mockCampaigns: Campaign[] = [
   {
     id: "camp_rhino_recognition",
-    name: "Reconocimiento de rhino",
+    name: "Campaña",
     status: "draft",
     objective: "awareness",
     budgetType: "daily",
@@ -57,7 +57,7 @@ export const mockAdSets: AdSet[] = [
   {
     id: "adset_frio_recognition",
     campaignId: "camp_rhino_recognition",
-    name: "Frío / Reconocimiento de Rhino 2",
+    name: "Conjunto de ads",
     status: "draft",
     budgetType: "daily",
     budget: 25,
@@ -127,7 +127,7 @@ export const mockAds: Ad[] = [
     id: "ad_primera_impresion",
     adSetId: "adset_frio_recognition",
     campaignId: "camp_rhino_recognition",
-    name: "Frío / Primera impresión",
+    name: "Anuncio 1",
     status: "draft",
     creative: {
       id: "creative_primera",
@@ -181,66 +181,6 @@ export const mockAds: Ad[] = [
     },
     createdAt: "2024-01-10T11:00:00Z",
     updatedAt: "2024-01-10T11:00:00Z",
-    createdBy: "user_elias",
-  },
-  {
-    id: "ad_reconocimiento_rhino",
-    adSetId: "adset_frio_recognition",
-    campaignId: "camp_rhino_recognition",
-    name: "Frío / Reconocimiento rhino",
-    status: "draft",
-    creative: {
-      id: "creative_rhino",
-      type: "image",
-      assets: {
-        images: [
-          {
-            url: "/placeholder.svg?height=400&width=600",
-            alt: "Rhino Testing Framework",
-            dimensions: { width: 600, height: 400 },
-          },
-        ],
-      },
-      copy: {
-        headline: "Framework Rhino Testing",
-        primaryText: "Descubre el framework de testing más innovador. Automatiza tus pruebas con Rhino.",
-        description: "Potencia tu carrera en QA",
-        displayLink: "rhinotesting.com",
-        websiteUrl: "https://rhinotesting.com",
-      },
-      callToAction: {
-        type: "sign_up",
-        text: "Registrarse",
-      },
-      branding: {
-        pageId: "page_elias",
-        pageName: "Elías Cardona - Tutor de Software Testing",
-      },
-    },
-    tracking: {
-      utmSource: "facebook",
-      utmMedium: "cpc",
-      utmCampaign: "reconocimiento_rhino",
-      utmContent: "reconocimiento_rhino",
-      conversionEvents: ["PageView", "Lead", "Purchase"],
-      customParameters: {},
-    },
-    performance: {
-      impressions: 0,
-      reach: 0,
-      clicks: 0,
-      ctr: 0,
-      cpc: 0,
-      cpm: 0,
-      conversions: 0,
-      costPerConversion: 0,
-    },
-    testing: {},
-    approval: {
-      status: "pending",
-    },
-    createdAt: "2024-01-10T11:15:00Z",
-    updatedAt: "2024-01-10T11:15:00Z",
     createdBy: "user_elias",
   },
 ]

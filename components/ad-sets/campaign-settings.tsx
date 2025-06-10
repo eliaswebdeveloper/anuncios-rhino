@@ -7,7 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { CheckCircle, DollarSign } from "lucide-react"
 import type { Campaign } from "../../types/advertising"
-import { useAdvertisingData } from "../../lib/hooks/use-advertising-data"
+import { useAdvertisingData } from "../../lib/ad-sets/hooks"
 import { formatCurrency, getObjectiveText, validateCampaignData } from "../../app/utils/advertising-helpers"
 import { CampaignDetailsForm } from "@/components/complements/objective-form"
 

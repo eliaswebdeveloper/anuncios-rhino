@@ -8,7 +8,7 @@ import { DateRangePicker } from "./components/date-range-picker"
 import { ActionBar } from "./components/action-bar"
 import { CampaignTable } from "./components/campaign-table"
 import { useRouter } from "next/navigation"
-import { useAdvertisingData } from "./lib/hooks/use-advertising-data"
+import { useAdvertisingData } from "./lib/ad-sets/hooks"
 
 export default function AdsDashboard() {
   const router = useRouter()

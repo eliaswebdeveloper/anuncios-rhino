@@ -1,6 +1,6 @@
 "use client"
 
-import { useAdvertisingData } from "../../../lib/hooks/use-advertising-data"
+import { useAdvertisingData } from "../../../lib/ad-sets/hooks"
 
 export default function TestPage() {
   const { campaigns, adSets, ads } = useAdvertisingData()

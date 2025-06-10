@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { CheckCircle } from "lucide-react"
 import type { AdSet } from "../../types/advertising"
-import { useAdvertisingData } from "../../lib/hooks/use-advertising-data"
+import { useAdvertisingData } from "../../lib/ad-sets/hooks"
 import { validateAdSetData } from "../../app/utils/advertising-helpers"
 import { TargetingSettings } from "../complements/targeting-card"
 
