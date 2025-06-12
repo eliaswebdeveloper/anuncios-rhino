@@ -3,6 +3,7 @@
 import { useParams } from "next/navigation"
 import { useAdvertisingData } from "../../../lib/ad-sets/hooks"
 import { AdSetSettings } from "../../../components/ad-sets/ad-set-settings"
+import { performanceObjectivesForFirstSet, targetSettingsForFirstSet } from "@/lib/ad-set-data"
 
 export default function AdSetPage() {
   const params = useParams()
@@ -17,7 +18,7 @@ export default function AdSetPage() {
         <h1 className="text-xl font-semibold mb-2">Conjunto de anuncios no encontrado</h1>
         <p className="text-gray-600 mb-4">ID buscado: {adSetId}</p>
         <p className="text-sm text-gray-500">
-          Prueba con: <code className="bg-gray-100 px-2 py-1 rounded">adset_frio_recognition</code>
+          Prueba con: <code className="bg-gray-100 px-2 py-1 rounded">frio_reconocimiento</code>
         </p>
       </div>
     )
@@ -25,7 +26,10 @@ export default function AdSetPage() {
 
   return (
     <div className="max-w-7xl mx-auto">
-      <AdSetSettings adSet={adSet} />
+      <AdSetSettings
+        adSet={adSet}
+        performanceObjectives={performanceObjectivesForFirstSet}
+        targetSettings={targetSettingsForFirstSet} />
     </div>
   )
 }

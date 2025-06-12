@@ -33,8 +33,8 @@ export default function AdSetLayout({ children }: AdSetLayoutProps) {
         <div className="text-center">
           <h1 className="text-xl font-semibold mb-2">Conjunto de anuncios no encontrado</h1>
           <p className="text-gray-600 mb-4">ID buscado: {adSetId}</p>
-          <p className="text-sm text-gray-500">IDs disponibles: adset_frio_recognition</p>
-          <Link href="/conjunto-de-anuncios/adset_frio_recognition" className="text-blue-600 hover:underline">
+          <p className="text-sm text-gray-500">IDs disponibles: frio_reconocimiento</p>
+          <Link href="/conjunto-de-anuncios/frio_reconocimiento" className="text-blue-600 hover:underline">
             Ir al conjunto de anuncios disponible
           </Link>
         </div>

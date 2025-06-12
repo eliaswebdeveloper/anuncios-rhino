@@ -25,7 +25,6 @@ export function CampaignTableHeader({ allSelected = false, onToggleSelectAll, on
             onClick={() => column.sortable && onSort?.(column.key)}
           >
             {column.label}
-            {column.hasArrow && " ↑"}
             {column.sortable && <ChevronDown className="w-4 h-4 inline ml-1" />}
           </TableHead>
         ))}

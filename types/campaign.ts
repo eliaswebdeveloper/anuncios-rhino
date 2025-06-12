@@ -1,5 +1,5 @@
 export interface Campaign {
-  id: number
+  id: string
   name: string
   active: boolean
   status: string

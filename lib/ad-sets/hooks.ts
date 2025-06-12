@@ -77,7 +77,7 @@ export function useAdvertisingData() {
 
   // Create new campaign
   const createCampaign = useCallback(
-    (campaignData: Omit<Campaign, "id" | "createdAt" | "updatedAt" | "adSets" | "spentBudget">) => {
+    (campaignData: Omit<Campaign, "id" | "createdAt" | "updatedAt" | "adSets">) => {
       const newCampaign: Campaign = {
         ...campaignData,
         id: `camp_${Date.now()}`,
@@ -95,22 +95,12 @@ export function useAdvertisingData() {
 
   // Create new ad set
   const createAdSet = useCallback(
-    (adSetData: Omit<AdSet, "id" | "createdAt" | "updatedAt" | "ads" | "spentBudget" | "performance">) => {
+    (adSetData: Omit<AdSet, "id" | "createdAt" | "updatedAt" | "ads">) => {
       const newAdSet: AdSet = {
         ...adSetData,
         id: `adset_${Date.now()}`,
         spentBudget: 0,
         ads: [],
-        performance: {
-          impressions: 0,
-          reach: 0,
-          clicks: 0,
-          ctr: 0,
-          cpc: 0,
-          cpm: 0,
-          conversions: 0,
-          costPerConversion: 0,
-        },
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
       }
@@ -128,23 +118,10 @@ export function useAdvertisingData() {
   )
 
   // Create new ad
-  const createAd = useCallback((adData: Omit<Ad, "id" | "createdAt" | "updatedAt" | "performance" | "approval">) => {
+  const createAd = useCallback((adData: Omit<Ad, "id" | "createdAt" | "updatedAt">) => {
     const newAd: Ad = {
       ...adData,
       id: `ad_${Date.now()}`,
-      performance: {
-        impressions: 0,
-        reach: 0,
-        clicks: 0,
-        ctr: 0,
-        cpc: 0,
-        cpm: 0,
-        conversions: 0,
-        costPerConversion: 0,
-      },
-      approval: {
-        status: "pending",
-      },
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     }

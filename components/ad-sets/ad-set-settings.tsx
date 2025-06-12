@@ -3,41 +3,25 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { CheckCircle } from "lucide-react"
 import type { AdSet } from "../../types/advertising"
-import { useAdvertisingData } from "../../lib/ad-sets/hooks"
-import { validateAdSetData } from "../../app/utils/advertising-helpers"
-import { TargetingSettings } from "../complements/targeting-card"
+import { PerformanceSettings, TargetingSettings } from "../complements/targeting-card"
 
-interface AdSetSettingsProps {
-  adSet: AdSet
-}
-
-export function AdSetSettings({ adSet }: AdSetSettingsProps) {
-  const { updateAdSet, account } = useAdvertisingData()
+export function AdSetSettings({
+  adSet,
+  performanceObjectives,
+  targetSettings
+}: {
+  adSet: AdSet;
+  performanceObjectives: Record<string, any>;
+  targetSettings: Record<string, any>;
+}) {
   const [formData, setFormData] = useState(adSet)
   const [errors, setErrors] = useState<string[]>([])
 
-  const handleSave = () => {
-    const validationErrors = validateAdSetData(formData)
-    if (validationErrors.length > 0) {
-      setErrors(validationErrors)
-      return
-    }
-
-    updateAdSet(adSet.id, formData)
-    setErrors([])
-  }
-
-  const targets = {
-    ubicacion: "Aguascalientes: colocar la flecha del mapa en Colosio, AGS. Radio: el mínimo (7 km)",
-    rangoDeEdad: "18 - 40",
-    sexo: "Hombres",
-    intereses: "Intereses: Ejercicio físico (fitness)",
-    idiomas: "Todos los idiomas",
-  };
+  // if (!performanceObjectives || !targetSettings)
+  //   return <>no recibimos datos suficientes</>
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -80,6 +64,19 @@ export function AdSetSettings({ adSet }: AdSetSettingsProps) {
           </CardContent>
         </Card>
 
+        {/* Performance settings */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <CheckCircle className="w-5 h-5 text-green-600" />
+              Objetivos de rendimiento
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <PerformanceSettings data={performanceObjectives} />
+          </CardContent>
+        </Card>
+
         {/* Targeting */}
         <Card>
           <CardHeader>
@@ -89,9 +86,10 @@ export function AdSetSettings({ adSet }: AdSetSettingsProps) {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <TargetingSettings data={targets} />
+            <TargetingSettings data={targetSettings} />
           </CardContent>
         </Card>
+
       </div>
 
       {/* Right Sidebar */}
